@@ -19,7 +19,7 @@ const navigation =useNavigation()
 
  const handleSave =async() =>{
   try {
-    const postcontent = await axios.post('http://192.168.68.107:9000/api/content',{content})
+    const postcontent = await axios.post('https://pheel-backend.onrender.com/api/content',{content})
     const otherinfo = postcontent.data
     if(postcontent.status===200){
       dispatch({type:'CREATE_CONTENT',payload:otherinfo})

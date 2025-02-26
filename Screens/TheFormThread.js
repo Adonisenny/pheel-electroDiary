@@ -26,7 +26,7 @@ const theinfo = {myid,thethread}
 
  const handleSave =async() =>{
   try {
-    const postthread = await axios.post('http://192.168.68.107:9000/api/thread',theinfo)
+    const postthread = await axios.post('https://pheel-backend.onrender.com/api/thread',theinfo)
     const otherinfo = postthread.data
  if (postthread.status===200){
 

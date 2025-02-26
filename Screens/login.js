@@ -28,7 +28,7 @@ const postLogin = async() => {
   dispatch({type:"LOGIN_START"})
 
   try{
-  const res = await axios.post('http://192.168.68.107:9000/api/auth/login',loginDetails)
+  const res = await axios.post('https://pheel-backend.onrender.com/api/auth/login',loginDetails)
 const otherres = res.data
 
  setPassword('')
@@ -43,7 +43,7 @@ if(res.status===200){
 
   }catch(error){
      setErrMessage(true)
-    console.log({error:'what error'})
+    console.log(error)
   }
 
   

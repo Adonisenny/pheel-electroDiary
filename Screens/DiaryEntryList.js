@@ -18,7 +18,7 @@ const DiaryEntryList = ({navigation}) => {
    useEffect(() => {
 const fetchit = async() => {
 try{
-  const response = await fetch("http://192.168.68.107:9000/api/content")
+  const response = await fetch("https://pheel-backend.onrender.com/api/content")
            
   const newcontent = await response.json()
   

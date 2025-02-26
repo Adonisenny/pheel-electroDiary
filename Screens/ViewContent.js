@@ -24,7 +24,7 @@ useEffect(() => {
   
   
         try {
-        const response = await axios.get(`http://192.168.68.107:9000/api/content/${id}`)
+        const response = await axios.get(`https://pheel-backend.onrender.com/api/content/${id}`)
         
         const thecontent = response.data
         setContent(thecontent)
@@ -54,7 +54,7 @@ useEffect(() => {
 
 
       try {
-      const response = await axios.get(`http://192.168.68.107:9000/api/thread/${id}`)
+      const response = await axios.get(`https://pheel-backend.onrender.com/api/thread/${id}`)
       
       const thethread = response.data
     

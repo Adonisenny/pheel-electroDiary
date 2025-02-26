@@ -3,6 +3,9 @@
     "name": "electroDiary",
     "slug": "electroDiary",
     "version": "1.0.0",
+    "extra": {
+      "API_BASE_URL": "https://your-backend-name.onrender.com"
+    },
     "orientation": "portrait",
     "icon": "./assets/images/pheelings.png",
     "userInterfaceStyle": "light",

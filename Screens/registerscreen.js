@@ -30,7 +30,7 @@ export const Register =() => {
       dispatch({type:"LOGIN_START"})
         try {
             
-            const submitDetails = await axios.post('http://192.168.68.107:9000/api/auth/register',registerdetails)
+            const submitDetails = await axios.post('https://pheel-backend.onrender.com/api/auth/register',registerdetails)
             const otherjson = submitDetails.data
             setEmail('')
             setPassword('')
