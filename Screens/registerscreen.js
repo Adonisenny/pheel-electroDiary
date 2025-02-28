@@ -21,11 +21,14 @@ export const Register =() => {
     const navigation =useNavigation()
 
 
+
     const handleSubmit =async()=>{
+      
      
       const registerdetails = {email,username,password}
-      if(!email && !username && !password){
+      if(!email || !username || !password){
         seterrM('No field can be left empty')
+        return;
       }
       dispatch({type:"LOGIN_START"})
         try {
@@ -36,14 +39,14 @@ export const Register =() => {
             setPassword('')
             setUsername('')
            
-            seterrM(false)
-            if(submitDetails.status===200){
+            seterrM('')
+            if(submitDetails.status===200 || submitDetails.status===201){
               dispatch({payload:otherjson})
               navigation.navigate('Login')
             }
         } catch (error) {
            setErrMessage(true)
-           console.log('error',error)
+           console.log(error)
         
         }
     }
@@ -92,7 +95,7 @@ export const Register =() => {
             </TouchableOpacity>
             </View>
             <Text style={{textAlign:'center', fontSize:15}}>If you have an account, <Text onPress={loginNavigate} style={{color:'blue'}}>Login</Text></Text>
-            
+            {errMessage && <Text>can't register</Text>}
     </View>
     )
 }
@@ -132,10 +135,7 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
         elevation: 2,
       },
-      submitText:{
-        flex:1,
-
-      },
+    
       submitButton:{
         backgroundColor:'#45555C',
         borderRadius:12,
