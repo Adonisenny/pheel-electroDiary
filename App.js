@@ -127,9 +127,6 @@ return(
               },
                }}
                />
-
-{/*           
-<Drawer.Screen component={Themes} name='change theme' /> */}
  
              
                
